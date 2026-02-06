@@ -11,40 +11,62 @@ body {
   background: linear-gradient(135deg, #ff9ecb, #ffc0da);
   font-family: Arial, sans-serif;
   text-align: center;
+  overflow: hidden;
 }
 
 .container {
-  margin-top: 80px;
+  margin-top: 60px;
 }
 
 h1 {
   color: white;
-  font-size: 40px;
+  font-size: 38px;
 }
 
 .box {
   background: white;
-  margin: 30px;
-  padding: 35px;
+  margin: 25px;
+  padding: 30px;
   border-radius: 25px;
   font-size: 22px;
   line-height: 1.8;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
-button {
+.btn {
   padding: 15px 30px;
   font-size: 20px;
   border: none;
   border-radius: 20px;
-  background: #ff4f93;
-  color: white;
   cursor: pointer;
-  margin-top: 20px;
+  margin: 15px;
 }
 
-button:hover {
-  transform: scale(1.05);
+.yes {
+  background: #ff4f93;
+  color: white;
+}
+
+.no {
+  background: #444;
+  color: white;
+  position: absolute;
+}
+
+#result {
+  display: none;
+  margin-top: 20px;
+  animation: pop 0.6s ease;
+}
+
+@keyframes pop {
+  from {transform: scale(0);}
+  to {transform: scale(1);}
+}
+
+.gif {
+  width: 220px;
+  border-radius: 20px;
 }
 </style>
 </head>
@@ -55,18 +77,38 @@ button:hover {
   <h1>❤️ Heart ❤️</h1>
 
   <div class="box">
-    يا فاطمة يا نور العين والقلب 💖<br><br>
-    وجودك فحياتي نعمة كبيرة<br><br>
-    كل نهار معاك هو عيد وفرحة<br><br>
-    ضحكتك كترد فيا الروح 😊<br><br>
-    وبغيت نسولك سؤال واحد مهم…<br><br>
-    💍 واش تقبلي تكوني زوجتي؟
+    يا كتكوتي الصغيورك يا نور العين والقلب 💖<br><br>
+   كل دقيقة بلا بيك كنحس بيها بعام 😩<br>
+    وضحكتك كترد فيا الروح 😊<br><br>
+    بغيت نقوليك حاجة 🌚…<br><br>
+    💍 واش تقبلي تزوجي بيا ااااا؟؟
   </div>
 
-  <button onclick="alert('جاوبيني بنعم 😄❤️')">
-    اضغطي هنا
-  </button>
+  <button class="btn yes" onclick="showLove()">Yes 😍</button>
+  <button class="btn no" id="noBtn">No 😅</button>
+
+  <div id="result">
+    <h2>🎉 woooooo 3ala zaaaaby ana frhaaan ❤️😍</h2>
+    <p>فرحتيني بزاف 💞💞</p>
+    <img class="gif" src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif">
+  </div>
+
 </div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", () => {
+  const x = Math.random() * (window.innerWidth - 120);
+  const y = Math.random() * (window.innerHeight - 60);
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+});
+
+function showLove() {
+  document.getElementById("result").style.display = "block";
+}
+</script>
 
 </body>
 </html>
