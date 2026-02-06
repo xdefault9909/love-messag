@@ -72,7 +72,9 @@ h1 {
 </head>
 
 <body>
-
+<audio id="music">
+  <source src="https://www.myinstants.com/media/sounds/spongebob-fail.mp3" type="audio/mpeg">
+</audio>
 <div class="container">
   <h1>❤️ To my FATFUTA ❤️</h1>
 
@@ -105,7 +107,23 @@ noBtn.addEventListener("mouseover", () => {
   noBtn.style.top = y + "px";
 });
 
+<script>
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", () => {
+  const x = Math.random() * (window.innerWidth - 120);
+  const y = Math.random() * (window.innerHeight - 60);
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+});
+
 function showLove() {
+  document.getElementById("result").style.display = "block";
+  const m = document.getElementById("music");
+  m.currentTime = 0;
+  m.play();
+}
+</script>
   document.getElementById("result").style.display = "block";
 }
 </script>
