@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <head>
 <meta charset="UTF-8">
 <title>رسالة حب ❤️</title>
@@ -119,9 +120,17 @@ noBtn.addEventListener("mouseover", () => {
 
 function showLove() {
   document.getElementById("result").style.display = "block";
+
   const m = document.getElementById("music");
   m.currentTime = 0;
   m.play();
+
+  confetti({
+    particleCount: 180,
+    spread: 90,
+    origin: { y: 0.6 }
+  });
+}
 }
 </script>
   document.getElementById("result").style.display = "block";
