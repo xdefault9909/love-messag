@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ar">
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <head>
 <meta charset="UTF-8">
 <title>رسالة حب ❤️</title>
@@ -116,27 +115,25 @@ noBtn.addEventListener("mouseover", () => {
   noBtn.style.top = y + "px";
 });
 
+<img class="gif" src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif">
+  </div>
+
+</div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", () => {
+  const x = Math.random() * (window.innerWidth - 120);
+  const y = Math.random() * (window.innerHeight - 60);
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+});
+
 function showLove() {
   document.getElementById("result").style.display = "block";
-
-  const m = document.getElementById("music");
-  m.currentTime = 0;
-  m.play();
-
-  confetti({
-    particleCount: 180,
-    spread: 90,
-    origin: { y: 0.6 }
-  });
-}
-}
 }
 </script>
-  document.getElementById("result").style.display = "block";
-}
-</script>
-<audio id="music">
-  <source src="https://www.myinstants.com/media/sounds/spongebob-fail.mp3" type="audio/mpeg">
-</audio>
+
 </body>
-</html>
+</html
